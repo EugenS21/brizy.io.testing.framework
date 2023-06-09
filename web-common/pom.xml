@@ -10,8 +10,8 @@
     </parent>
 
     <groupId>org.eugens21.brizy.io</groupId>
-    <artifactId>web-test-data</artifactId>
-    <name>Brizy io web test data module</name>
-    <description>The test data module deals with the management of test data used in UI tests.</description>
+    <artifactId>web-common</artifactId>
+    <name>Brizy io web common module</name>
+    <description>The web module provides a set of common tools to be used in child modules.</description>
 
 </project>

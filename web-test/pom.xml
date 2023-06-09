@@ -11,7 +11,7 @@
 
     <groupId>org.eugens21.brizy.io</groupId>
     <artifactId>web-test</artifactId>
-    <name>Brizy io tests module</name>
+    <name>Brizy io web tests module</name>
     <description> This module contains the actual test scripts that interact with the UI elements of the Brizy application.</description>
 
     <dependencies>
