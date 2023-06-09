@@ -23,6 +23,7 @@
         <module>web-interactions</module>
         <module>web-test-data</module>
         <module>web-reporting</module>
+        <module>web-common</module>
     </modules>
 
     <properties>
@@ -35,6 +36,11 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.eugens21.brizy.io</groupId>
+                <artifactId>web-common</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
             <dependency>
                 <groupId>org.eugens21.brizy.io</groupId>
                 <artifactId>web-driver</artifactId>

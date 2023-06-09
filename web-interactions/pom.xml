@@ -11,7 +11,7 @@
 
     <groupId>org.eugens21.brizy.io</groupId>
     <artifactId>web-interactions</artifactId>
-    <name>Brizy io interactions module</name>
+    <name>Brizy io web interactions module</name>
     <description>This module is responsible for interacting with the UI. It provides the necessary methods and functions to locate and manipulate UI elements.</description>
 
 
