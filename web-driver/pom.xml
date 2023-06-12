@@ -20,6 +20,10 @@
             <artifactId>playwright</artifactId>
             <version>${playwright.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.eugens21.brizy.io</groupId>
+            <artifactId>web-common</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
