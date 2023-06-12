@@ -14,5 +14,15 @@
     <name>Brizy io web interactions module</name>
     <description>This module is responsible for interacting with the UI. It provides the necessary methods and functions to locate and manipulate UI elements.</description>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.microsoft.playwright</groupId>
+            <artifactId>playwright</artifactId>
+            <version>${playwright.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eugens21.brizy.io</groupId>
+            <artifactId>web-common</artifactId>
+        </dependency>
+    </dependencies>
 </project>
