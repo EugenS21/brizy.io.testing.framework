@@ -24,14 +24,13 @@ class PlaywrightService {
     }
 
     protected Playwright create() {
-        if (isNull(playwright)) {
-            this.playwright = Playwright.create(createOptions);
-        }
-        return playwright;
+        return Playwright.create(createOptions);
     }
 
     protected void close() {
-        playwright.close();
+        if (Objects.nonNull(playwright)) {
+            playwright.close();
+        }
     }
 
 }

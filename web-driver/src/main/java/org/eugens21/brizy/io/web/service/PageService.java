@@ -16,10 +16,7 @@ class PageService {
     Page page;
 
     protected Page createNewPage(BrowserContext context) {
-        if (Objects.isNull(page)) {
-            this.page = context.newPage();
-        }
-        return page;
+        return context.newPage();
     }
 
     protected void reload() {

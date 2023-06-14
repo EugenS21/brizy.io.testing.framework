@@ -27,10 +27,7 @@ class BrowserService {
     }
 
     protected Browser launch(Playwright playwright) {
-        if (Objects.isNull(browser)) {
-            this.browser = type.getBrowserType(playwright).launch(launchOptions);
-        }
-        return browser;
+        return type.getBrowserType(playwright).launch(launchOptions);
     }
 
     protected void close() {
