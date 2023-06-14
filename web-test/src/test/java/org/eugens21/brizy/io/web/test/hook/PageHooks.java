@@ -1,8 +1,10 @@
 package org.eugens21.brizy.io.web.test.hook;
 
+import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.Page;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.spring.ScenarioScope;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -17,13 +19,14 @@ public class PageHooks {
     PageService pageService;
     Storage storage;
 
-    @Before(order = 1)
+    @Before(order = -60000)
     public void doPageInit() {
-        Page page = pageService.create();
+        BrowserContext context = storage.getValue(StorageKey.CONTEXT, BrowserContext.class);
+        Page page = pageService.create(context);
         storage.addValue(StorageKey.PAGE, page);
     }
 
-    @After(order = 10)
+    @After(order = 90000)
     public void doClosePage() {
         Page page = storage.getValue(StorageKey.PAGE, Page.class);
         page.close();
