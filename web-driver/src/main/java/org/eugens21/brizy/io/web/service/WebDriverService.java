@@ -14,6 +14,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.naming.Context;
+
 import static lombok.AccessLevel.PRIVATE;
 
 @Component
@@ -37,27 +39,32 @@ public class WebDriverService {
         this.pageService = new PageService();
     }
 
-    /**
-     * Initializes Playwright components (context and browser) on the defined properties.
-     */
-    public void init() {
-        Playwright playwright = playwrightService.create();
-        Browser browser = browserService.launch(playwright);
-        contextService.newContext(browser);
+    public Playwright createInstance() {
+        return playwrightService.create();
     }
 
-    public Page create() {
-        return pageService.createNewPage(contextService.getContext());
-    }
-
-    /**
-     * Initializes Playwright components (context and browser) on the defined properties.
-     */
-    public void close() {
-        contextService.close();
-        browserService.close();
+    public void closeInstance() {
         playwrightService.close();
     }
 
+    public Browser createBrowser(Playwright playwright) {
+        return browserService.launch(playwright);
+    }
+
+    public void closeBrowser() {
+        browserService.close();
+    }
+
+    public BrowserContext createContext(Browser browser) {
+        return contextService.newContext(browser);
+    }
+
+    public void closeContext() {
+        contextService.close();
+    }
+
+    public Page createNewPage(BrowserContext context) {
+        return pageService.createNewPage(context);
+    }
 
 }

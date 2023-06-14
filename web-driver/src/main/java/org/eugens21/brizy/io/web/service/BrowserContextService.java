@@ -5,12 +5,14 @@ import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.Browser.NewContextOptions;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.Cookie;
 import lombok.Getter;
 import lombok.experimental.FieldDefaults;
 import lombok.experimental.NonFinal;
 import org.eugens21.brizy.io.web.property.ContextProperties;
 import org.eugens21.brizy.io.web.property.WebDriverProperties;
 
+import java.util.Collections;
 import java.util.Objects;
 
 import static lombok.AccessLevel.PRIVATE;
@@ -29,10 +31,12 @@ class BrowserContextService {
     }
 
     protected BrowserContext newContext(Browser browser) {
-        if (Objects.isNull(context)) {
-            this.context = browser.newContext(contextProperties);
-        }
-        return context;
+        BrowserContext browserContext = browser.newContext(contextProperties);
+        Cookie e = new Cookie("CLOUDREMEMBERME","QXBwQnVuZGxlXEVudGl0eVxVc2VyOlluSnBlbmxmZEdWemREUTFOQT09OjE2OTE4NTM0MjA6NWNiODAxYzZhMzRkN2JjYmRhNDk4ZmVlM2RmMjBlNmM3NjkyMGI1Nzk5NTNmZjQ5M2VlYjQwMjU5NGE2ZmIyZQ%3D%3D");
+        e.setDomain("www.brizy.cloud");
+        e.setPath("/");
+        browserContext.addCookies(Collections.singletonList(e));
+        return browserContext;
     }
 
     protected void close() {
