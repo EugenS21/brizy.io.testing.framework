@@ -24,6 +24,10 @@
             <artifactId>web-test-data</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.eugens21.brizy.io</groupId>
+            <artifactId>web-interactions</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
