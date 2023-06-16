@@ -4,7 +4,6 @@ import com.microsoft.playwright.Page;
 import io.cucumber.java.en.When;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
-import org.eugens21.brizy.io.web.interactions.element.nested.EditorSidebar;
 import org.eugens21.brizy.io.web.interactions.page.EditorPage;
 import org.eugens21.brizy.io.web.interactions.properties.WebLocatorsProperties;
 import org.eugens21.brizy.io.web.interactions.properties.editor.EditorPageProperties;
@@ -38,7 +37,6 @@ public class EditorPageSteps {
         EditorPage editorPage = storage.getValue(StorageKey.EDITOR_PAGE, EditorPage.class);
         editorPage.popUpMenu().switchToTab(tab);
     }
-
 
     @When("select create your own block")
     public void selectCreateYourOwnBlock() {

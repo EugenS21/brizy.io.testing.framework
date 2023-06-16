@@ -1,7 +1,7 @@
 package org.eugens21.brizy.io.web.test.config;
 
 import io.cucumber.spring.CucumberContextConfiguration;
-import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.eugens21.brizy.io.web.WebDriverConfiguration;
 import org.eugens21.brizy.io.web.common.WebCommonConfiguration;
 import org.eugens21.brizy.io.web.interactions.WebInteractionsConfiguration;
@@ -20,7 +20,7 @@ public class BrizyTestsConfig {
     @Autowired
     EnvironmentPropertiesWriter environmentPropertiesWriter;
 
-    @PostConstruct
+    @PreDestroy
     public void initProperties() {
         environmentPropertiesWriter.writeProperties(Path.of("target/allure-results/environment.properties"), Map.of(
                 "Executor", System.getProperty("os.name"),

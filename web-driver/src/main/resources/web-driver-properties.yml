@@ -4,15 +4,15 @@ screenSize:
 baseUrl: https://www.brizy.io/
 playwright:
   env:
-    headless: false
+    headless: true
 browser:
   type: firefox
-  headless: false
-  devTools: true
-  downloadsPath: "web-test/target/downloads"
+  headless: true
+  devTools: false
+  downloadsPath: "target/downloads"
   slowMo: 200
   timeout: 5000
-  tracesDir: "web-test/target/traces"
+  tracesDir: "target/traces"
 context:
   acceptDownloads: true
   baseUrl: ${baseUrl}
@@ -22,7 +22,7 @@ context:
   javaScriptEnabled: true
   locale: "en"
   offline: false
-  recordVideoDir: "web-test/target/recordings"
+  recordVideoDir: "target/recordings"
   recordVideoSize:
     width: ${screenSize.width}
     height: ${screenSize.height}
