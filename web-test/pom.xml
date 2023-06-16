@@ -12,7 +12,9 @@
     <groupId>org.eugens21.brizy.io</groupId>
     <artifactId>web-test</artifactId>
     <name>Brizy io web tests module</name>
-    <description> This module contains the actual test scripts that interact with the UI elements of the Brizy application.</description>
+    <description>This module contains the actual test scripts that interact with the UI elements of the Brizy
+        application.
+    </description>
 
     <dependencies>
         <dependency>
@@ -72,5 +74,18 @@
             <version>26.2.0</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure-maven.version}</version>
+                <configuration>
+                    <reportVersion>${allure-maven.version}</reportVersion>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

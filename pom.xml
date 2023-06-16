@@ -36,6 +36,7 @@
         <vavr.version>0.10.4</vavr.version>
         <model.mapper.version>3.1.1</model.mapper.version>
         <allure.version>2.22.1</allure.version>
+        <allure-maven.version>2.12.0</allure-maven.version>
     </properties>
 
     <dependencies>
