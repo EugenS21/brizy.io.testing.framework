@@ -9,10 +9,12 @@ import org.eugens21.brizy.io.web.reporting.WebReportingConfiguration;
 import org.eugens21.brizy.io.web.reporting.service.EnvironmentPropertiesWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ContextConfiguration;
 
 import java.nio.file.Path;
 import java.util.Map;
 
+@ContextConfiguration
 @CucumberContextConfiguration
 @SpringBootTest(classes = {WebInteractionsConfiguration.class, WebDriverConfiguration.class, WebCommonConfiguration.class, WebReportingConfiguration.class})
 public class BrizyTestsConfig {
