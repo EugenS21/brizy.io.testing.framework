@@ -14,4 +14,20 @@
     <name>Brizy io web reporting module</name>
     <description>This module is responsible for generating test reports and logging the execution details of UI tests.</description>
 
+    <dependencies>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber7-jvm</artifactId>
+            <version>${allure.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eugens21.brizy.io</groupId>
+            <artifactId>web-common</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>
