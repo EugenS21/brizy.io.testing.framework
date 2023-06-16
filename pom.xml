@@ -35,6 +35,7 @@
         <cucumber.version>7.12.1</cucumber.version>
         <vavr.version>0.10.4</vavr.version>
         <model.mapper.version>3.1.1</model.mapper.version>
+        <allure.version>2.22.1</allure.version>
     </properties>
 
     <dependencies>
@@ -82,11 +83,6 @@
             <dependency>
                 <groupId>org.eugens21.brizy.io</groupId>
                 <artifactId>web-reporting</artifactId>
-                <version>1.0-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.eugens21.brizy.io</groupId>
-                <artifactId>web-test</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
             <dependency>
