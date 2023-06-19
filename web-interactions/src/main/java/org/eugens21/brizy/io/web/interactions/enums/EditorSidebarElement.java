@@ -1,4 +1,4 @@
-package org.eugens21.brizy.io.web.interactions;
+package org.eugens21.brizy.io.web.interactions.enums;
 
 public enum EditorSidebarElement {
 

@@ -18,10 +18,10 @@ pages:
       name: brz-ed-iframe
       addButton: //div[contains(@class,'floating-action-button')]
       workspace:
-        self: //div[contains(@class,'brz-ed-page__blocks')]
+        self: //div[contains(@id,'brz-ed-page__blocks')]
         container:
           self: ${pages.editor.frame.workspace.self}//div[contains(@class,'brz-container')]
-          item: /div
+          item: //div[@data-border--grey='wrapper']
     sidebar:
       self: //div[contains(@class,'brz-ed-sidebar')]
       addItems:
