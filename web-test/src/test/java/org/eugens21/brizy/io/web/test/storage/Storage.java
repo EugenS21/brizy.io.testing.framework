@@ -1,7 +1,6 @@
 package org.eugens21.brizy.io.web.test.storage;
 
 import io.cucumber.spring.ScenarioScope;
-import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import org.eugens21.brizy.io.web.test.enums.StorageKey;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import static lombok.AccessLevel.PRIVATE;
 
@@ -34,7 +34,9 @@ public class Storage {
     }
 
     public <U> List<U> getListValue(StorageKey key, Class<U> clazz) {
-        return (List<U>) store.get(key);
+        return (List<U>) ((List) store.get(key)).stream()
+                .map(clazz::cast)
+                .collect(Collectors.toList());
     }
 
     public boolean containsKey(StorageKey key) {

@@ -19,7 +19,7 @@ public class EditorSidebar {
         this.content = new EditorSidebarContent(sidebarProperties.getAddItems().getContent().getMain(), page);
     }
 
-    public EditorSidebarContent add() {
+    public EditorSidebarContent fromAddElementsControl() {
         addItems.get().click();
         return content;
     }

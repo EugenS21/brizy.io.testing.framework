@@ -44,10 +44,4 @@ public class EditorPageSteps {
         editorPage.popUpMenu().createYourOwn();
     }
 
-    @When("add the following items to the container:")
-    public void addTheFollowingItemsToTheContainer() {
-        EditorPage editorPage = storage.getValue(StorageKey.EDITOR_PAGE, EditorPage.class);
-//        editorPage.sidebar().add().element();
-    }
-
 }
