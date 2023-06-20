@@ -22,7 +22,7 @@ public class Div {
         Mouse mouse = locator.page().mouse();
         hover();
         mouse.down();
-        mouse.move(elementPosition.getX(), elementPosition.getY(), new Mouse.MoveOptions().setSteps(500));
+        mouse.move(elementPosition.getX(), elementPosition.getY(), new Mouse.MoveOptions().setSteps(100));
         mouse.up();
     }
 

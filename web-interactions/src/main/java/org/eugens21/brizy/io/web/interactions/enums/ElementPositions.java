@@ -32,8 +32,8 @@ public enum ElementPositions {
         @Override
         public ElementPositionDto getPosition(ElementSizeDto size, ElementPositionDto position) {
             return ElementPositionDto.builder()
-                    .x(((size.getWidth() / 2) + position.getX())-10)
-                    .y(position.getY() + position.getY())
+                    .x(((size.getWidth() / 2) + position.getX()))
+                    .y(size.getHeight() + position.getY())
                     .build();
         }
     },
