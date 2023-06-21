@@ -1,6 +1,7 @@
 package org.eugens21.brizy.io.web.test.steps;
 
 import io.cucumber.java.en.When;
+import io.qameta.allure.Allure;
 import io.vavr.NotImplementedError;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
@@ -14,6 +15,7 @@ import org.eugens21.brizy.io.web.test.transformer.MapperTransformerUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.io.ByteArrayInputStream;
 import java.util.List;
 
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
@@ -44,6 +46,7 @@ public class ContainerSteps {
         List<Item> itemsToAdd = storage.getListValue(StorageKey.ITEMS_TO_BE_ADDED_TO_THE_PAGE, Item.class);
         List<SidebarItemDto> sidebarItemsToAdd = MapperTransformerUtil.getSidebarItemsDtoFromPageItems.apply(itemsToAdd);
         editorPage.editPage().add(sidebarItemsToAdd);
+        Allure.addAttachment("Added items", "image/png", new ByteArrayInputStream(editorPage.takeScreenshot()), "png");
     }
 
 }

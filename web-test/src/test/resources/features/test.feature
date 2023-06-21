@@ -11,10 +11,9 @@ Feature: Test feature
       | item   | position | parent         | name           |
       | TEXT   | -        | -              | GREETINGS_TEXT |
       | IMAGE  | BOTTOM   | GREETINGS_TEXT | WELCOME_IMAGE  |
-      | BUTTON | BOTTOM   | WELCOME_IMAGE  | WELCOME_BUTTON |
-      | ICON   | UP       | WELCOME_BUTTON | WELCOME_ICON   |
+      | BUTTON | UP       | WELCOME_IMAGE  | WELCOME_BUTTON |
 #    And prepare the following properties for the items to be added to the page:
 #      | item_name      | text     | size |
 #      | GREETINGS_TEXT | DemoText | size |
-#    And add the items to the page
+    And add the items to the page
 #    When publish the page
