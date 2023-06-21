@@ -12,11 +12,13 @@ import lombok.experimental.FieldNameConstants;
 @Data
 @FieldNameConstants
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
-public class ItemToAdd {
+public class Item {
 
     String item;
     String position;
     String parent;
     String name;
+    @Builder.Default
+    PageItemProperty pageItemProperties = null;
 
 }
