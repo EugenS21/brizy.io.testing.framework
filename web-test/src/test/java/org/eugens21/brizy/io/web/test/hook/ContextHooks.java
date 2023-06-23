@@ -4,7 +4,6 @@ import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import io.cucumber.spring.ScenarioScope;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -21,14 +20,14 @@ public class ContextHooks {
     ContextService contextService;
     Storage storage;
 
-    @Before(order = -70000)
+    @Before(order = -70)
     public void initContext() {
         Browser browser = storage.getValue(BROWSER, Browser.class);
         BrowserContext context = contextService.create(browser);
         storage.addValue(CONTEXT, context);
     }
 
-    @After(order = 80000)
+    @After(order = 80)
     public void closeContext() {
         BrowserContext context = storage.getValue(CONTEXT, BrowserContext.class);
         context.close();

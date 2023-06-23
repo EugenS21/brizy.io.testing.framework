@@ -37,4 +37,8 @@ public class EditorPage {
         return pageBuilder;
     }
 
+    public byte[] takeScreenshot() {
+        return page.screenshot(new Page.ScreenshotOptions().setFullPage(true));
+    }
+
 }
